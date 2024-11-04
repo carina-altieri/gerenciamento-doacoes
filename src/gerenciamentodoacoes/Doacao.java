@@ -3,16 +3,16 @@ package gerenciamentodoacoes;
 public class Doacao {
     private int id_doacao;
     private String rg;
-    private String cnpj;
+    private String cnpj_instituicao;
     private String cnpj_beneficiario;
     private String descricao;
     private String categoria;
 
 
-    public Doacao(int id_doacao, String rg, String cnpj, String cnpj_beneficiario, String descricao, String categoria) {
+    public Doacao(int id_doacao, String rg, String cnpj_instituicao, String cnpj_beneficiario, String descricao, String categoria) {
         this.id_doacao = id_doacao;
         this.rg = rg;
-        this.cnpj = cnpj;
+        this.cnpj_instituicao = cnpj_instituicao;
         this.cnpj_beneficiario = cnpj_beneficiario;
         this.descricao = descricao;
         this.categoria = categoria;
@@ -34,15 +34,14 @@ public class Doacao {
         this.rg = rg;
     }
     
-    public String getCNPJ() {
-        return cnpj;
+    public String getCNPJ_instituicao() {
+        return cnpj_instituicao;
     }
     
-    public void setCNPJ(String cnpj) {
-        this.cnpj = cnpj;
+    public void setCNPJ_instituicao(String cnpj_instituicao) {
+        this.cnpj_instituicao = cnpj_instituicao;
     }
 
-    
     public String getCNPJ_beneficiario() {
         return cnpj_beneficiario;
     }
@@ -65,6 +64,11 @@ public class Doacao {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }   
+    
+    @Override
+    public String toString() {
+        return "Descrição: " + descricao + ", Categoria: " + categoria;
+    }
 }
 
 

@@ -6,13 +6,11 @@ public class Rastreio {
     private String status;
  
 
-    public Rastreio(int id_rastreio, int id_doacao, String status/*, String dateStatus*/) {
+    public Rastreio(int id_rastreio, int id_doacao, String status) {
         this.id_rastreio = id_rastreio;
         this.id_doacao = id_doacao;
         this.status = status;
-        //this.dateStatus = dateStatus;
     }
-    
     
     public int getID_rastreio() {
         return id_rastreio;
@@ -33,16 +31,18 @@ public class Rastreio {
     public String getStatus() {
         return status;
     }
-
+    
     public void setStatus(String status) {
         this.status = status;
     } 
+
+    public void atualizarStatus(String novoStatus) {
+        this.status = novoStatus;
+    }
     
-//    public String getDateStatus() {
-//        return dateStatus;
-//    }
-//    
-//    public void setDateStatus(String dateStatus) {
-//        this.dateStatus = dateStatus;
-//    }
+    @Override
+    public String toString() { 
+        return "Status da doação: " + status;
+    }
+    
 }

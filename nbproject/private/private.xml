@@ -4,15 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/Connections/DatabaseConnection.java</file>
-            <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/Rastreio.java</file>
-            <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/InstituicaoBeneficiadaDAO.java</file>
             <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/Instituicao.java</file>
-            <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/InstituicaoDAO.java</file>
             <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/GerenciamentoDoacoes.java</file>
+            <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/InstituicaoDAO.java</file>
             <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/DoacaoDAO.java</file>
-            <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/RastreioDAO.java</file>
-            <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/DoadorDAO.java</file>
-            <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/Doador.java</file>
+            <file>file:/C:/Users/55219/OneDrive/Documentos/NetBeansProjects/gerenciamentoDoacoes/src/gerenciamentodoacoes/Doacao.java</file>
         </group>
     </open-files>
 </project-private>

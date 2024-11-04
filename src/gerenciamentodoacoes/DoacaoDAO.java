@@ -11,13 +11,13 @@ import java.util.List;
 public class DoacaoDAO {
         public void create(Doacao doacao){
         
-        String query = "INSERT INTO doacao (cnpj, RG, cnpj_beneficiario, descricao, categoria) VALUES(?, ?, ?, ?, ?)";
+        String query = "INSERT INTO doacao (cnpj_instituicao, RG, cnpj_beneficiario, descricao, categoria) VALUES(?, ?, ?, ?, ?)";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query);
         ) {
             stmt.setInt(1, doacao.getID_doacao());
-            stmt.setString(1, doacao.getCNPJ());
+            stmt.setString(1, doacao.getCNPJ_instituicao());
             stmt.setString(2, doacao.getRG());
             stmt.setString(3, doacao.getCNPJ_beneficiario());
             stmt.setString(4, doacao.getDescricao());
@@ -39,7 +39,7 @@ public class DoacaoDAO {
             ResultSet rs = stmt.executeQuery()
         ) {
             while (rs.next()) {
-                doacoes.add(new Doacao(rs.getInt("id_doacao"), rs.getString("RG"),rs.getString("cnpj"), rs.getString("cnpj_beneficiario"), rs.getString("descricao"), rs.getString("categoria")));
+                doacoes.add(new Doacao(rs.getInt("id_doacao"), rs.getString("RG"),rs.getString("cnpj_instituicao"), rs.getString("cnpj_beneficiario"), rs.getString("descricao"), rs.getString("categoria")));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -2,19 +2,19 @@ package gerenciamentodoacoes;
 
 public class InstituicaoBeneficiada {
     private String cnpj_beneficiario;
-    private String nome;
-    private String endereco;
-    private String telefone;
-    private String email;
+    private String nomeBeneficiario;
+    private String enderecoBeneficiario;
+    private String telefoneBeneficiario;
+    private String emailBeneficiario;
  
 
 
-    public InstituicaoBeneficiada(String cnpj_beneficiario, String nome, String endereco, String telefone, String email) {
+    public InstituicaoBeneficiada(String cnpj_beneficiario, String nomeBeneficiario, String enderecoBeneficiario, String telefoneBeneficiario, String emailBeneficiario) {
         this.cnpj_beneficiario = cnpj_beneficiario;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.telefone = telefone;
-        this.email = email;
+        this.nomeBeneficiario = nomeBeneficiario;
+        this.enderecoBeneficiario = enderecoBeneficiario;
+        this.telefoneBeneficiario = telefoneBeneficiario;
+        this.emailBeneficiario = emailBeneficiario;
     }
 
     public String getCNPJ_beneficiario() {
@@ -25,34 +25,39 @@ public class InstituicaoBeneficiada {
         this.cnpj_beneficiario = cnpj_beneficiario;
     }
     
-    public String getNome(){
-        return nome;
+    public String getNomeBeneficiario(){
+        return nomeBeneficiario;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeBeneficiario(String nomeBeneficiario) {
+        this.nomeBeneficiario = nomeBeneficiario;
     }
     
-    public String getEndereco() {
-        return endereco;
+    public String getEnderecoBeneficiario() {
+        return enderecoBeneficiario;
     }
 
-    public void setEndereco(String endereco) {
-        this.email = endereco;
+    public void setEnderecoBeneficiario(String enderecoBeneficiario) {
+        this.enderecoBeneficiario = enderecoBeneficiario;
     } 
     
-    public String getTelefone() {
-        return telefone;
+    public String getTelefoneBeneficiario() {
+        return telefoneBeneficiario;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefoneBeneficiario(String telefoneBeneficiario) {
+        this.telefoneBeneficiario = telefoneBeneficiario;
     }
     
-     public String getEmail() {
-        return email;
+     public String getEmailBeneficiario() {
+        return emailBeneficiario;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailBeneficiario(String emailBeneficiario) {
+        this.emailBeneficiario = emailBeneficiario;
     }  
+    
+      @Override
+    public String toString() {
+        return "Nome: " + nomeBeneficiario + ", CNPJ: " + cnpj_beneficiario + ", Endereço: " + enderecoBeneficiario + ", Email: " + emailBeneficiario + ", Telefone: " + telefoneBeneficiario;
+    }
 }

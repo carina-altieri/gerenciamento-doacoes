@@ -9,7 +9,7 @@ public class DatabaseConnection {
     //Colocar o usuario que loga no MySQL Workbench
     private static final String USER = "root";
     //Colocar a senha que loga no MySQL Workbench
-    private static final String PASSWORD = "suasenha";
+    private static final String PASSWORD = "senha";
 
     //Método que faz a conexão com o banco de dados
     public static Connection getConnection() {

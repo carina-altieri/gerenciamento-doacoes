@@ -19,10 +19,10 @@ public class InstituicaoBeneficiadaDAO {
             PreparedStatement stmt = conn.prepareStatement(query);
         ) { 
             stmt.setString(1, instituicaoBeneficiada.getCNPJ_beneficiario());
-            stmt.setString(2, instituicaoBeneficiada.getNome());
-            stmt.setString(3, instituicaoBeneficiada.getEndereco());
-            stmt.setString(4, instituicaoBeneficiada.getTelefone());
-            stmt.setString(5, instituicaoBeneficiada.getEmail());
+            stmt.setString(2, instituicaoBeneficiada.getNomeBeneficiario());
+            stmt.setString(3, instituicaoBeneficiada.getEnderecoBeneficiario());
+            stmt.setString(4, instituicaoBeneficiada.getTelefoneBeneficiario());
+            stmt.setString(5, instituicaoBeneficiada.getEmailBeneficiario());
             stmt.execute();
         } catch (SQLException e) {
             // Lança uma exceção em caso de erro.
@@ -54,9 +54,9 @@ public class InstituicaoBeneficiadaDAO {
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query)
         ) {
-            stmt.setString(1,instituicaoBeneficiada.getNome());
-            stmt.setString(2, instituicaoBeneficiada.getEndereco());
-            stmt.setString(3, instituicaoBeneficiada.getTelefone());
+            stmt.setString(1,instituicaoBeneficiada.getNomeBeneficiario());
+            stmt.setString(2, instituicaoBeneficiada.getEnderecoBeneficiario());
+            stmt.setString(3, instituicaoBeneficiada.getTelefoneBeneficiario());
             stmt.setString(3, instituicaoBeneficiada.getCNPJ_beneficiario());
             stmt.execute();
         } catch (SQLException e) {

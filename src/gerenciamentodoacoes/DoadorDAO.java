@@ -12,15 +12,15 @@ public class DoadorDAO {
  
         public void create(Doador doador){
         
-        String query = "INSERT INTO doador (rg, nome, telefone, email) VALUES(?, ?, ?, ?)";
+        String query = "INSERT INTO doador (rg, nomeDoador, telefoneDoador, emailDoador) VALUES(?, ?, ?, ?)";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query);
         ) {
             stmt.setString(1, doador.getRG());
-            stmt.setString(2, doador.getNome());
-            stmt.setString(3, doador.getTelefone());
-            stmt.setString(4, doador.getEmail());
+            stmt.setString(2, doador.getNomeDoador());
+            stmt.setString(3, doador.getTelefoneDoador());
+            stmt.setString(4, doador.getEmailDoador());
             stmt.execute();
         } catch (SQLException e) {
             // Lança uma exceção em caso de erro.
@@ -47,16 +47,15 @@ public class DoadorDAO {
     }
     
     public void update(Doador doador, String rg) {
-        String query = "UPDATE doador SET nome = ?, telefone = ?, email = ? WHERE RG = ?";
+        String query = "UPDATE doador SET nomeDoador = ?, telefoneDoador = ?, emailDoador = ? WHERE RG = ?";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query)
         ) {
             stmt.setString(1, doador.getRG());
-            stmt.setString(2, doador.getTelefone());
-            stmt.setString(3,doador.getNome());
-            stmt.setString(4, doador.getTelefone());
-            stmt.setString(5, doador.getEmail());
+            stmt.setString(2,doador.getNomeDoador());
+            stmt.setString(3, doador.getTelefoneDoador());
+            stmt.setString(4, doador.getEmailDoador());
             stmt.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
