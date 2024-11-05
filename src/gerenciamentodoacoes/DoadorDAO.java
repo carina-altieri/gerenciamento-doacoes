@@ -12,7 +12,7 @@ public class DoadorDAO {
  
         public void create(Doador doador){
         
-        String query = "INSERT INTO doador (rg, nomeDoador, telefoneDoador, emailDoador) VALUES(?, ?, ?, ?)";
+        String query = "INSERT INTO doador (rg, nome, telefone, email) VALUES(?, ?, ?, ?)";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -23,7 +23,7 @@ public class DoadorDAO {
             stmt.setString(4, doador.getEmailDoador());
             stmt.execute();
         } catch (SQLException e) {
-            // Lança uma exceção em caso de erro.
+            // Lança uma exceção em caso de erro
             throw new RuntimeException(e);
         
         }
@@ -46,8 +46,21 @@ public class DoadorDAO {
         return doadores;
     }
     
+        public boolean exists(String rg) {
+        String query = "SELECT * FROM doador where RG = ?";
+        try {
+            Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, rg);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+          
     public void update(Doador doador, String rg) {
-        String query = "UPDATE doador SET nomeDoador = ?, telefoneDoador = ?, emailDoador = ? WHERE RG = ?";
+        String query = "UPDATE doador SET nome = ?, telefone = ?, email = ? WHERE RG = ?";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query)

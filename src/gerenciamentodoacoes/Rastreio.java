@@ -1,31 +1,35 @@
 package gerenciamentodoacoes;
 
 public class Rastreio {
-    private int id_rastreio;
-    private int id_doacao;
+    private int idRastreio;
+    private int idDoacao;
     private String status;
  
-
-    public Rastreio(int id_rastreio, int id_doacao, String status) {
-        this.id_rastreio = id_rastreio;
-        this.id_doacao = id_doacao;
+    public Rastreio(int idRastreio, int idDoacao, String status) {
+        this.idRastreio = idRastreio;
+        this.idDoacao = idDoacao;
         this.status = status;
     }
     
-    public int getID_rastreio() {
-        return id_rastreio;
+    public Rastreio(int idDoacao, String status) {
+        this.idDoacao = idDoacao;
+        this.status = status;
     }
     
-    public void setID_rastreio(int id_rastreio) {
-        this.id_rastreio = id_rastreio;
+    public int getIdRastreio() {
+        return idRastreio;
     }
     
-    public int getID_doacao(){
-        return id_doacao;
+    public void setIdRastreio(int idRastreio) {
+        this.idRastreio = idRastreio;
     }
     
-    public void setID_doacao(int id_doacao) {
-        this.id_doacao = id_doacao;
+    public int getIdDoacao(){
+        return idDoacao;
+    }
+    
+    public void setIdDoacao(int idDoacao) {
+        this.idDoacao = idDoacao;
     }
     
     public String getStatus() {

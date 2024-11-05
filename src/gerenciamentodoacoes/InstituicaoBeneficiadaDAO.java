@@ -2,7 +2,6 @@ package gerenciamentodoacoes;
 
 import Connections.DatabaseConnection;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +12,7 @@ public class InstituicaoBeneficiadaDAO {
     
         public void create(InstituicaoBeneficiada instituicaoBeneficiada){
         
-        String query = "INSERT INTO instituicao_beneficiada (cnpj_beneficiario, nome, endereco, telefone, email) VALUES(?, ?, ?, ?)";
+        String query = "INSERT INTO instituição_beneficiada (CNPJ_beneficiario, nome, endereco, telefone, email) VALUES(?, ?, ?, ?)";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -33,14 +32,14 @@ public class InstituicaoBeneficiadaDAO {
     
         public List<InstituicaoBeneficiada> readAll() {
         List<InstituicaoBeneficiada> instituicoesBeneficiadas = new ArrayList<>();
-        String query = "SELECT * FROM instituicao_beneficiada";
+        String query = "SELECT * FROM instituição_beneficiada";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query);
             ResultSet rs = stmt.executeQuery()
         ) {
             while (rs.next()) {
-                instituicoesBeneficiadas.add(new InstituicaoBeneficiada(rs.getString("cnpj_beneficiario"),rs.getString("nome"), rs.getString("endereco"), rs.getString("telefone"), rs.getString("email")));
+                instituicoesBeneficiadas.add(new InstituicaoBeneficiada(rs.getString("CNPJ_beneficiario"),rs.getString("nome"), rs.getString("endereco"), rs.getString("telefone"), rs.getString("email")));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -49,7 +48,7 @@ public class InstituicaoBeneficiadaDAO {
     }
     
     public void update(InstituicaoBeneficiada instituicaoBeneficiada, String cnpj_beneficiario) {
-        String query = "UPDATE InstituicaoBeneficiada SET nome = ?, endereco = ?, telefone = ? WHERE cnpj_beneficiario  = ?";
+        String query = "UPDATE instituição_beneficiada SET nome = ?, endereco = ?, telefone = ? WHERE CNPJ_beneficiario  = ?";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query)
@@ -65,7 +64,7 @@ public class InstituicaoBeneficiadaDAO {
     }
     
     public void delete(int idBeneficiario) {
-        String query = "DELETE FROM instituicao_beneficiaria WHERE id_beneficiario = ?";
+        String query = "DELETE FROM instituição_beneficiaria WHERE id_beneficiario = ?";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query)

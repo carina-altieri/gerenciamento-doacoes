@@ -15,7 +15,7 @@ public class InstituicaoDAO {
             PreparedStatement stmt = conn.prepareStatement(query);
         ) {
             stmt.setString(1, instituicao.getNomeInstituicao());
-            stmt.setString(2, instituicao.getCNPJ_instituicao());
+            stmt.setString(2, instituicao.getCNPJinstituicao());
             stmt.execute();
         } catch (SQLException e) {
             // Lança uma exceção em caso de erro.
@@ -23,24 +23,7 @@ public class InstituicaoDAO {
         
         }
     }
-    
-//        public List<Instituicao> readAll() {
-//            List<Instituicao> instituicoes = new ArrayList<>();
-//            String query = "SELECT * FROM instituicao";
-//            try (
-//                Connection conn = DatabaseConnection.getConnection();
-//                PreparedStatement stmt = conn.prepareStatement(query);
-//                ResultSet rs = stmt.executeQuery()
-//            ) {
-//                while (rs.next()) {
-//                    instituicoes.add(new Instituicao(rs.getString("cnpj"), rs.getString("nome")));
-//                }
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            }
-//            return instituicoes;
-//        }
-//        
+     
         public boolean exists(String nome) {
             String query = "SELECT * FROM instituição where nome = ?";
             try {
@@ -61,7 +44,7 @@ public class InstituicaoDAO {
             PreparedStatement stmt = conn.prepareStatement(query)
         ) {
             stmt.setString(1,instituicao.getNomeInstituicao());
-            stmt.setString(2, instituicao.getCNPJ_instituicao());
+            stmt.setString(2, instituicao.getCNPJinstituicao());
             stmt.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);

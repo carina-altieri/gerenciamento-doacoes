@@ -1,20 +1,20 @@
 package gerenciamentodoacoes;
 
 public class Instituicao {
-    private String cnpj_instituicao;
+    private String cnpjInstituicao;
     private String nomeInstituicao;
 
-    public Instituicao(String nomeInstituicao, String cnpj_instituicao) {
-        this.cnpj_instituicao = cnpj_instituicao;
+    public Instituicao(String nomeInstituicao, String cnpjInstituicao) {
+        this.cnpjInstituicao = cnpjInstituicao;
         this.nomeInstituicao = nomeInstituicao;
     }
     
-    public String getCNPJ_instituicao() {
-        return cnpj_instituicao;
+    public String getCNPJinstituicao() {
+        return cnpjInstituicao;
     }
 
-    public void setCNPJ_instituicao(String cnpj_instituicao) {
-        this.cnpj_instituicao = cnpj_instituicao;
+    public void setCNPJinstituicao(String cnpjInstituicao) {
+        this.cnpjInstituicao = cnpjInstituicao;
     } 
       
     public String getNomeInstituicao(){
@@ -28,7 +28,7 @@ public class Instituicao {
     @Override
      public String toString() {
         return "Empresa{" +
-                "CNPJ: '" + cnpj_instituicao + '\'' +
+                "CNPJ: '" + cnpjInstituicao + '\'' +
                 ", NomeInstituicao: '" + nomeInstituicao + '\'' +
                 '}';
     }

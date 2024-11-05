@@ -44,7 +44,7 @@ public class Doador {;
         this.telefoneDoador = telefoneDoador;
     }
     
-     public String getEmailDoador() {
+    public String getEmailDoador() {
         return emailDoador;
     }
 

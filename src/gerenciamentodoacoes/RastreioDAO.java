@@ -34,7 +34,7 @@ public class RastreioDAO {
             ResultSet rs = stmt.executeQuery()
         ) {
             while (rs.next()) {
-                rastreios.add(new Rastreio(rs.getInt("id_rastreio"), rs.getInt("id_doacao"), rs.getString("status")));
+                rastreios.add(new Rastreio(rs.getInt("id_rastreio"), rs.getString("status")));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -42,27 +42,27 @@ public class RastreioDAO {
         return rastreios;
     }
     
-    public void update(Rastreio rastreio, int id_rastreio) {
+    public void update(Rastreio rastreio, int idRastreio) {
         String query = "UPDATE Rastreio SET status = ? WHERE id_rastreio  = ?";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query)
         ) {
             stmt.setString(1, rastreio.getStatus());
-            stmt.setInt(2, id_rastreio);
+            stmt.setInt(2, idRastreio);
             stmt.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     
-    public void delete(int id_rastreio) {
+    public void delete(int idRastreio) {
         String query = "DELETE FROM rastreio WHERE id_rastreio = ?";
         try (
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query)
         ) {
-            stmt.setInt(1, id_rastreio);
+            stmt.setInt(1, idRastreio);
             stmt.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);

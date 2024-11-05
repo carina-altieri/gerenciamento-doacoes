@@ -1,29 +1,37 @@
 package gerenciamentodoacoes;
 
 public class Doacao {
-    private int id_doacao;
+    private int idDoacao;
     private String rg;
-    private String cnpj_instituicao;
-    private String cnpj_beneficiario;
+    private String cnpjInstituicao;
+    private String cnpjBeneficiario;
     private String descricao;
     private String categoria;
 
 
-    public Doacao(int id_doacao, String rg, String cnpj_instituicao, String cnpj_beneficiario, String descricao, String categoria) {
-        this.id_doacao = id_doacao;
+    public Doacao(int idDoacao, String rg, String cnpjInstituicao, String cnpjBeneficiario, String descricao, String categoria) {
+        this.idDoacao = idDoacao;
         this.rg = rg;
-        this.cnpj_instituicao = cnpj_instituicao;
-        this.cnpj_beneficiario = cnpj_beneficiario;
+        this.cnpjBeneficiario = cnpjBeneficiario;
+        this.cnpjInstituicao = cnpjInstituicao;
         this.descricao = descricao;
         this.categoria = categoria;
     }
     
-    public int getID_doacao() {
-        return id_doacao;
+    public Doacao(String rg, String cnpjInstituicao, String cnpjBeneficiario, String descricao, String categoria) {
+        this.rg = rg;
+        this.cnpjBeneficiario = cnpjBeneficiario;
+        this.cnpjInstituicao = cnpjInstituicao;
+        this.descricao = descricao;
+        this.categoria = categoria;
+    }
+  
+    public int getIdDoacao() {
+        return idDoacao;
     }
     
-    public void setID_doacao(int id_doacao) {
-        this.id_doacao = id_doacao;
+    public void setIdDoacao(int idDoacao) {
+        this.idDoacao = idDoacao;
     }
     
     public String getRG() {
@@ -34,20 +42,20 @@ public class Doacao {
         this.rg = rg;
     }
     
-    public String getCNPJ_instituicao() {
-        return cnpj_instituicao;
+    public String getCNPJinstituicao() {
+        return cnpjInstituicao;
     }
     
-    public void setCNPJ_instituicao(String cnpj_instituicao) {
-        this.cnpj_instituicao = cnpj_instituicao;
+    public void setCNPJinstituicao(String cnpjInstituicao) {
+        this.cnpjInstituicao = cnpjInstituicao;
     }
 
-    public String getCNPJ_beneficiario() {
-        return cnpj_beneficiario;
+    public String getCNPJbeneficiario() {
+        return cnpjBeneficiario;
     }
 
-    public void setCNPJ_beneficiario(String cnpj_beneficiario) {
-        this.cnpj_beneficiario = cnpj_beneficiario;
+    public void setCNPJbeneficiario(String cnpjBeneficiario) {
+        this.cnpjBeneficiario = cnpjBeneficiario;
     }
     
     public String getDescricao(){
